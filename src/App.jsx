@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { 
-  Eye, 
-  Database, 
-  GraduationCap, 
-  Send, 
-  Sparkles, 
+import {
+  Eye,
+  Database,
+  GraduationCap,
+  Send,
+  Sparkles,
   ArrowRight,
   ExternalLink,
   BookOpen,
@@ -95,7 +95,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-[#07090e] text-slate-100 antialiased selection:bg-sky-500 selection:text-black font-sans">
-      
+
       {/* 1. Custom Hardware-Accelerated Smooth Cursor */}
       <CustomCursor />
 
@@ -103,7 +103,7 @@ export default function App() {
       <GridCursorEffect />
 
       {/* 3. Ambient Mouse Spotlight */}
-      <div 
+      <div
         className="pointer-events-none fixed inset-0 z-20 transition-opacity duration-300"
         style={{
           background: `radial-gradient(650px circle at ${mousePos.x}px ${mousePos.y}px, rgba(56, 189, 248, 0.07), transparent 80%)`
@@ -131,7 +131,13 @@ export default function App() {
         {/* Sticky Header Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[#07090e]/80 backdrop-blur-md border-b border-slate-800/80">
           <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#home" className="flex items-center gap-2.5 font-mono text-sm tracking-wider font-bold text-white hover:text-sky-400 transition">
+            {/* <a href="#home" className="flex items-center gap-2.5 font-mono text-sm tracking-wider font-bold text-white hover:text-sky-400 transition"> */}
+            <a href="#home" className="flex items-center gap-2.5 font-mono text-sm tracking-wider font-bold text-white hover:text-sky-400 transition group">
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="w-8 h-8 rounded-lg object-contain border border-slate-700/80 group-hover:border-sky-400 transition shadow-sm"
+              />
               <span className="w-2.5 h-2.5 rounded-full bg-sky-400"></span>
               MOHAMMED DANISH
             </a>
@@ -151,7 +157,7 @@ export default function App() {
         {/* Hero Section */}
         <section id="home" className="pt-32 pb-16 md:pt-40 md:pb-24 max-w-6xl mx-auto px-6">
           <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 lg:gap-14">
-            
+
             {/* Bio Column */}
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-950/50 border border-sky-500/30 text-xs font-mono text-sky-300 mb-6">
@@ -174,14 +180,14 @@ export default function App() {
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
-                <a 
-                  href="#projects" 
+                <a
+                  href="#projects"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold text-sm transition shadow-lg shadow-sky-400/10"
                 >
                   View Featured Builds <ArrowRight size={16} />
                 </a>
-                <a 
-                  href="#contact" 
+                <a
+                  href="#contact"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-700 text-slate-200 font-medium text-sm transition"
                 >
                   Contact Me
@@ -192,15 +198,15 @@ export default function App() {
             {/* Portrait Card */}
             <div className="relative shrink-0">
               <div className="relative w-56 h-64 sm:w-72 sm:h-84 rounded-3xl p-1 bg-gradient-to-tr from-sky-500/30 via-slate-800/80 to-sky-400/20 shadow-2xl shadow-sky-500/10 backdrop-blur-md">
-                <img 
-                  src="/danish.jpeg" 
-                  alt="Mohammed Danish" 
+                <img
+                  src="/danish.jpeg"
+                  alt="Mohammed Danish"
                   className="w-full h-full object-cover rounded-[22px] bg-slate-900"
                   onError={(e) => {
                     e.currentTarget.src = "https://api.dicebear.com/7.x/initials/svg?seed=Mohammed+Danish&backgroundColor=07090e&textColor=38bdf8&fontFamily=Courier";
                   }}
                 />
-                
+
                 {/* Active Status Badge */}
                 <div className="absolute -bottom-3 -right-3 flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/95 border border-slate-700 text-[11px] font-mono text-emerald-400 shadow-xl backdrop-blur">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -290,8 +296,8 @@ export default function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {projects.map((proj, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="group p-6 sm:p-7 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-sky-500/30 flex flex-col justify-between transition-all duration-200 backdrop-blur-sm"
                 >
                   <div>
@@ -350,25 +356,25 @@ export default function App() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-mono text-slate-400 mb-1.5">Your Name</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        required 
-                        placeholder="e.g. John Doe" 
+                        required
+                        placeholder="e.g. John Doe"
                         className="w-full text-sm px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-400 transition"
                       />
                     </div>
                     <div>
                       <label className="block text-xs font-mono text-slate-400 mb-1.5">Email Address</label>
-                      <input 
-                        type="email" 
+                      <input
+                        type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        required 
-                        placeholder="john@example.com" 
+                        required
+                        placeholder="john@example.com"
                         className="w-full text-sm px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-400 transition"
                       />
                     </div>
@@ -376,19 +382,19 @@ export default function App() {
 
                   <div>
                     <label className="block text-xs font-mono text-slate-400 mb-1.5">Message</label>
-                    <textarea 
+                    <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      rows={4} 
-                      required 
-                      placeholder="Let me know how we can collaborate..." 
+                      rows={4}
+                      required
+                      placeholder="Let me know how we can collaborate..."
                       className="w-full text-sm px-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-400 transition"
                     ></textarea>
                   </div>
 
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="w-full py-3 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold text-sm inline-flex items-center justify-center gap-2 transition"
                   >
                     <Send size={15} /> Send Message
@@ -404,10 +410,10 @@ export default function App() {
           <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>&copy; {new Date().getFullYear()} Mohammed Danish &bull; Bengaluru, India</div>
             <div className="flex items-center gap-6 text-slate-400">
-              <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noreferrer" 
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
                 className="hover:text-sky-400 transition inline-flex items-center gap-1.5"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
