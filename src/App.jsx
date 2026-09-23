@@ -131,15 +131,13 @@ export default function App() {
         {/* Sticky Header Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[#07090e]/80 backdrop-blur-md border-b border-slate-800/80">
           <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            {/* <a href="#home" className="flex items-center gap-2.5 font-mono text-sm tracking-wider font-bold text-white hover:text-sky-400 transition"> */}
-            <a href="#home" className="flex items-center gap-2.5 font-mono text-sm tracking-wider font-bold text-white hover:text-sky-400 transition group">
+            <a href="#home" className="flex items-center gap-3 font-mono text-sm tracking-wider font-bold text-white hover:text-sky-400 transition group">
               <img
-                src="/logo.png"
+                src="/faviconNew.svg"
                 alt="Logo"
-                className="w-8 h-8 rounded-lg object-contain border border-slate-700/80 group-hover:border-sky-400 transition shadow-sm"
+                className="w-8 h-8 rounded-lg object-contain group-hover:scale-105 transition duration-200"
               />
-              <span className="w-2.5 h-2.5 rounded-full bg-sky-400"></span>
-              MOHAMMED DANISH
+              <span>MOHAMMED DANISH</span>
             </a>
 
             <div className="hidden md:flex items-center gap-7 text-xs font-mono tracking-wider uppercase text-slate-400">
